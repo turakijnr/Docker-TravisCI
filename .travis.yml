@@ -18,7 +18,7 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push decal10/complex-client
+  - docker push decal10/complex-react-client
   - docker push decal10/complex-nginx
   - docker push decal10/complex-server
   - docker push decal10/complex-worker

@@ -9,7 +9,7 @@ services:
   nginx:
     depends_on:
       - api
-      - client
+      - client-web
     restart: always
     build:
       dockerfile: Dockerfile.dev

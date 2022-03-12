@@ -11,14 +11,14 @@ script:
   - docker run -e CI=true decal10/react-test npm run test
 
 after_success:
-  - docker build -t decal10/complex-react-client ./client
+  - docker build -t decal10/complex-client ./client
   - docker build -t decal10/complex-nginx ./nginx
   - docker build -t decal10/complex-server ./server
   - docker build -t decal10/complex-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push decal10/complex-react-client
+  - docker push decal10/complex-client
   - docker push decal10/complex-nginx
   - docker push decal10/complex-server
   - docker push decal10/complex-worker

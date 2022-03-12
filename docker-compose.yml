@@ -9,7 +9,7 @@ services:
   nginx:
     depends_on:
       - api
-      - client-web
+      - client
     restart: always
     build:
       dockerfile: Dockerfile.dev
@@ -31,7 +31,7 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
-  client-web:
+  client:
       stdin_open: true
       build:
         dockerfile: Dockerfile.dev
